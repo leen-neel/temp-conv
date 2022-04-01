@@ -31,12 +31,18 @@ export default defineComponent({
   name: "IndexPage",
 
   setup() {
-    const celsius = ref(0);
+    const celsius = ref(55);
     const farenheit = ref(55);
 
     const toCel = () => {
       celsius.value = Math.round((farenheit.value - 32) * (5 / 9));
     };
+
+    const toFar = () => {
+      farenheit.value = Math.round(celsius.value * (9 / 5) + 32);
+    };
+
+    toFar();
 
     return {
       celsius,
