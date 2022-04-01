@@ -7,7 +7,7 @@
         </q-card-section>
 
         <q-card-section class="text-h4 text-weight-bold text-center">
-          15 <sup>o</sup>
+          {{ celsius }} <sup>o</sup>
         </q-card-section>
       </q-card>
 
@@ -17,7 +17,7 @@
         </q-card-section>
 
         <q-card-section class="text-h4 text-weight-bold text-center">
-          15 <sup>o</sup>
+          {{ farenheit }} <sup>o</sup>
         </q-card-section>
       </q-card>
     </div>
@@ -25,16 +25,30 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref, watch } from "vue";
 
 export default defineComponent({
   name: "IndexPage",
+
+  setup() {
+    const celsius = ref(0);
+    const farenheit = ref(55);
+
+    const toCel = () => {
+      celsius.value = Math.round((farenheit.value - 32) * (5 / 9));
+    };
+
+    return {
+      celsius,
+      farenheit,
+    };
+  },
 });
 </script>
 
 <style lang="scss" scoped>
 .card {
   width: 20vw;
-  // height: 50vh;
+  height: 35vh;
 }
 </style>
