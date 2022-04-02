@@ -99,7 +99,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .card {
   width: 200px;
-  // height: 35vh;
   color: white;
 }
 </style>
