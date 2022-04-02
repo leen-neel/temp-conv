@@ -1,6 +1,9 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="row q-gutter-lg">
+    <div
+      class="q-gutter-lg"
+      :class="{ row: !$q.screen.lt.md, column: $q.screen.lt.md }"
+    >
       <q-card class="bg-primary card">
         <q-card-section>
           <div class="text-h2 text-center text-weight-bolder">C</div>
@@ -57,7 +60,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, watch } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "IndexPage",
@@ -97,8 +100,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card {
-  width: 20vw;
-  height: 35vh;
+  width: 200px;
+  // height: 35vh;
   color: white;
 }
 </style>
