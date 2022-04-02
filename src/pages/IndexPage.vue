@@ -6,13 +6,13 @@
     >
       <q-card class="bg-primary card">
         <q-card-section>
-          <div class="text-h2 text-center text-weight-bolder">C</div>
+          <div class="text-h1 text-center text-weight-bolder">C</div>
         </q-card-section>
 
         <q-card-section
           v-if="!isEditingCel"
           @click="isEditingCel = true"
-          class="text-h4 text-weight-bold text-center cursor-pointer"
+          class="text-h3 text-weight-bold text-center cursor-pointer"
         >
           {{ celsius }}°
         </q-card-section>
@@ -32,13 +32,13 @@
 
       <q-card class="bg-primary card">
         <q-card-section>
-          <div class="text-h2 text-center text-weight-bolder">F</div>
+          <div class="text-h1 text-center text-weight-bolder">F</div>
         </q-card-section>
 
         <q-card-section
           v-if="!isEditingFar"
           @click="isEditingFar = true"
-          class="text-h4 text-weight-bold text-center cursor-pointer"
+          class="text-h3 text-weight-bold text-center cursor-pointer"
         >
           {{ farenheit }}°
         </q-card-section>
@@ -100,5 +100,7 @@ export default defineComponent({
 .card {
   width: 200px;
   color: white;
+  border-radius: 16px;
+  font-family: "Mukta", sans-serif;
 }
 </style>
