@@ -22,7 +22,7 @@
             color="white"
             v-if="isEditingCel"
             v-model="celsius"
-            type="text"
+            type="number"
             @blur="toFar"
             @keydown.prevent.enter="toFar"
             filled
@@ -48,7 +48,7 @@
             color="white"
             v-if="isEditingFar"
             v-model="farenheit"
-            type="text"
+            type="number"
             @blur="toCel"
             @keydown.prevent.enter="toCel"
             filled
@@ -66,8 +66,8 @@ export default defineComponent({
   name: "IndexPage",
 
   setup() {
-    const celsius = ref(55);
-    const farenheit = ref(55);
+    const celsius = ref(0);
+    const farenheit = ref(0);
 
     const isEditingCel = ref(false);
     const isEditingFar = ref(false);
@@ -81,8 +81,6 @@ export default defineComponent({
       farenheit.value = Math.round(celsius.value * (9 / 5) + 32);
       isEditingCel.value = false;
     };
-
-    toFar();
 
     return {
       celsius,
